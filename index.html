@@ -750,7 +750,7 @@ function renderPrices(){
 renderPrices();
 
 const modal=document.getElementById('modal');
-function openPay(){modal.classList.add('show');try{fbq('track','InitiateCheckout')}catch(e){}}
+function openPay(){try{fbq('track','InitiateCheckout')}catch(e){}window.location.href=STRIPE_LINK;}
 function closePay(){modal.classList.remove('show')}
 function goPay(which){
   const link=which==='stripe'?STRIPE_LINK:MERCADOPAGO_LINK;
